@@ -1,4 +1,5 @@
 import os
+import os.path
 
 print("-" * 60)
 print("Current Working Directory (CWD): " + os.getcwd())
@@ -8,6 +9,13 @@ print('-' * 60)
 
 print("Please specify the file you wish to rename (listed above)")
 file_to_rename = input("File to rename: ")
+
+### This check works, put absolute file paths conflict with while loop below
+# if os.path.isabs(file_to_rename) == True:
+#     print("absolute")
+# else:
+#     print("relative")
+
 
 while file_to_rename not in os.listdir():
     print("File not in FileRenamer directory!")
