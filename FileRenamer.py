@@ -23,7 +23,8 @@ print("Renaming Complete")
 
 
 ### TODO: prevent user from renaming the python file
+### TODO: if user doesn't give file extension, use the original files extension
+### TODO: files in subfolders get moved to main folder after renaming
+
 ### TODO: why doesn't this work when you drag file to terminal, that provides full path,
 ###       yet it throws a FileNotFound error.
-
-### TODO: if user doesn't give file extension, use the original files extension
