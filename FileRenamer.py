@@ -1,13 +1,18 @@
 import os
 
-print("-" * 25)
+print("-" * 60)
 print("Current Working Directory (CWD): " + os.getcwd())
 print()
 print("Files in CWD: " + str(os.listdir()))
-print('-' * 25)
+print('-' * 60)
 
-print("Please specify the full path of the file/folder you wish to rename")
-file_to_rename = input("Path to file being renamed: ")
+print("Please specify the file you wish to rename (listed above)")
+file_to_rename = input("File to rename: ")
+
+while file_to_rename not in os.listdir():
+    print("File not in FileRenamer directory!")
+    file_to_rename = input("File to rename: ")
+
 new_file_name = input("What would you like to rename it to?: ")
 
 os.rename(file_to_rename, new_file_name)
@@ -15,10 +20,10 @@ print("Renaming Complete")
 
 
 
-### TODO: Get to work with Relative Filepath... currently only works if the full file path is
-###       given manually, even when dragging the file to terminal and it provides the full path.
 
-### TODO: check that the path to the file given is valid (does file actually exist?)
-
+### TODO: prevent user from renaming the python file
+### TODO: and if else clause to allow absolute and relative file paths (if it has a /?)
 ### TODO: why doesn't this work when you drag file to terminal, that provides full path,
 ###       yet it throws a FileNotFound error.
+
+### TODO: if user doesn't give file extension, use the original files extension
